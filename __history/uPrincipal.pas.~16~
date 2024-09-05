@@ -1,0 +1,71 @@
+unit uPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.ComCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TfPrincipal = class(TForm)
+    pgPrincipal: TPageControl;
+    tbDados: TTabSheet;
+    tbEditar: TTabSheet;
+    pnDadosTop: TPanel;
+    pnDadosBot: TPanel;
+    btInserir: TBitBtn;
+    btEditar: TBitBtn;
+    btExcluir: TBitBtn;
+    dbgDados: TDBGrid;
+    btAtualizar: TBitBtn;
+    pnEditPrin: TPanel;
+    pnEditBt: TPanel;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    btGravar: TBitBtn;
+    btCancelar: TBitBtn;
+    lbId: TLabel;
+    lbMarca: TLabel;
+    lbNome: TLabel;
+    lbQuantidade: TLabel;
+    lbProdutos: TLabel;
+    pnEditar: TPanel;
+    procedure btInserirClick(Sender: TObject);
+    procedure tbEditarShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fPrincipal: TfPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfPrincipal.btInserirClick(Sender: TObject);
+
+begin
+
+  tbEditar.show;
+
+end;
+
+procedure TfPrincipal.tbEditarShow(Sender: TObject);
+//para sempre abrir na tbPrincipal
+begin
+  pgPrincipal.ActivePage := tbDados;
+end;
+
+end.
+
+
+// Height 360
+//width 370    pgPrincipal.ActivePage := tbDados;
+//  tbDados.TabVisible := false;
+//  tbEditar.TabVisible := false;
